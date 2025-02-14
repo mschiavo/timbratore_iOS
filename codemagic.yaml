@@ -1,0 +1,16 @@
+workflows:
+  ios:
+    name: iOS Build
+    ios:
+      # Percorso del progetto iOS
+      project: MyApp.xcodeproj
+      # Configurazione di build (ad esempio Debug o Release)
+      configuration: Release
+      # Certificati e profili di provisioning
+      code-signing:
+        signing-certificates:
+          - key: 'signing-key'
+        provisioning-profiles:
+          - profile: 'distribution-profile'
+    artifacts:
+      - build/ios/ipa/*.ipa
